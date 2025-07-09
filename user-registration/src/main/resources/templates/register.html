@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+        }
+        input {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 8px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">Register</h2>
+    <form th:action="@{/register}" method="post" th:object="${user}">
+        <input type="text" placeholder="Username" th:field="*{username}" required />
+        <input type="password" placeholder="Password" th:field="*{password}" required />
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
